@@ -4,6 +4,8 @@
 
 ## 2. Datasets
 CUI:
+Source: https://www.dropbox.com/scl/fo/m4sdd07arwp4gts8ea5tg/h?rlkey=99fb1m2j2b9z3ido02w2eu9wg&e=1&dl=0
+MIMIC data -> Data cleaning -> ehr data prep
 - mimic.db
 - EHR_demographic.csv
     
@@ -59,6 +61,7 @@ W19
 - bootstrapping_demo_se.R: evaluate bootstrapped metric means and se (use bootstrapped embeddings and original embeddings)
 
 ## 7. Incorporate Pre-trained embedding
+Source: https://celehs.github.io/PEHRT/m2.html
 W17+18
 - PLM.ipynb: gives PLMembeddings.csv
 - PLMembeddings.csv
