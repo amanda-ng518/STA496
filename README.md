@@ -52,6 +52,7 @@ Other datasets:
 - CUI+Phecode_embedding_demographics.R: generate demographic specific embeddings (use mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_embedding.Rdata and admissions.csv)
 
 ## 6. Embedding Evaluation on known pairs
+Reference: https://cran.r-project.org/web/packages/kgraph/vignettes/kgraph.html
 Calculate AUC, Accuracy, Sensitivity, Specificity
 ### 6.1 Overall 
 
