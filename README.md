@@ -10,15 +10,18 @@
 - Learning a Health Knowledge Graph from Electronic Medical Records
 - Robustly Extracting Medical Knowledge from EHRs: A Case Study of Learning a Health Knowledge Graph
 
-## 2. Datasets
-CUI:
+## 2. Initial Set up
+### 2.1 Datasets
+
 Source: https://www.dropbox.com/scl/fo/m4sdd07arwp4gts8ea5tg/h?rlkey=99fb1m2j2b9z3ido02w2eu9wg&e=1&dl=0
+
 MIMIC data -> Data cleaning -> ehr data prep
 - mimic.db
 - EHR_demographic.csv
     
 Phecode/ ICD:
 Source: https://physionet.org/content/mimiciv/3.1/hosp/#files-panel
+
 base -> hosp
 - admission.csv
 - diagnosis_icd.csv
