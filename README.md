@@ -76,6 +76,7 @@ Reference: https://celehs.github.io/PEHRT/m2.html
 - PLM.R: embeddings+evaluation (use CUI+Phecode_kdim.Rdata,demo_CUI+Phecode_kdim.Rdata, PLMembeddings.csv,phecode_definitions1.2.csv)
   
 ## 8. KESER Depression Feature Selection
+Reference: https://github.com/celehs/KESER 
 
 - CUI_Phecode_train_test.R: gives train and test CUI/Phecode embeddings (use use mimic.db and Phecode_Data_for_generating_embedding.Rdata)
 - Dep_featureselection_CUI/Phecode.R (use CUI_kdim.Rdata, train_CUI_kdim.Rdata, test_CUI_kdim.Rdata, Phecode_kdim.Rdata, train_Phecode_kdim.Rdata,test_Phecode_kdim.Rdata)
