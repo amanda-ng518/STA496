@@ -1,17 +1,82 @@
 # STA496: Fair Machine Learning with Biased Labels
 
-## Literature review notes
+## 1. Literature review notes
 
-## Data Preprocessing
+## 2. Datasets
+CUI:
+- mimic.db
+- EHR_demographic.csv
+    
+Phecode/ ICD:
+Source: https://physionet.org/content/mimiciv/3.1/hosp/#files-panel
+base -> hosp
+- admission.csv
+- diagnosis_icd.csv
+- d_icd_diagnoses.csv
+- ICD_Phecode.Rdata
 
-## Data Summary
+PLM: 
+- phecode_definitions1.2.csv
 
-## Embedding Training
+## 3. Data Summary 
+### 3.1 CUI
+- MIMIC_summary.R (W12a)
+- MIMIC_date.R(W11)
+### 3.2 Phecode/ ICD:
+- MIMIC-III_summary.R (W12b need to change the last line to ICD_Data_for_generating_embedding.Rdata)
 
-## Embedding Evaluation
-
-## Depression Feature Selection
-- Dep_featureselection_CUI/Phecode.R
-- Dep_featureselection_CUI+Phecode.R
+## 4. Data Preprocessing
+- Phecode_transformation.R: gives Phecode_Data_for_generating_embedding.Rdata
+- MIMIC-III_summary.R: gives ICD_Data_for_generating_embedding.Rdata
   
-## Supervised ML models for Depression Prediction
+## 5. Embedding Training (all output embedding matrix)
+Winter break
+- CUI_embedding.R (use mimic.db)
+- ICD_embedding.R (use ICD_Data_for_generating_embedding.Rdata)
+- Phecode_embedding.R (use Phecode_Data_for_generating_embedding.Rdata)
+
+W13
+- CUI+Phecode_embedding.R (use mimic.db and Phecode_Data_for_generating_embedding.Rdata)
+- CUI+Phecode_embedding_demographics.R: generate demographic specific embeddings (use mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_embedding.Rdata and admissions.csv)
+
+## 6. Embedding Evaluation on known pairs
+Calculate AUC, Accuracy, Sensitivity, Specificity
+### 6.1 Overall 
+Winter break
+- CUI_evalutation.R
+- ICD_evaluation.R
+- Phecode_evaluation.R
+W13
+- CUI+Phecode_evaluation.R (use CUI+Phecode_kdim.Rdata from embedding training)
+
+### 6.2 By Demographic groups
+W13
+- CUI+Phecode_demographics_evaluation.R (use demo_CUI+Phecode_kdim.Rdata from embedding training)
+
+### 6.3 Bootstrapping
+W19
+- Bootstrap_CUI+Phecode_embedding_demographics.R: generate 9 bootstrapped embeddings demo_CUI+Phecode_1500dim_j.Rdata
+- bootstrapping_demo_se.R: evaluate bootstrapped metric means and se (use bootstrapped embeddings and original embeddings)
+
+## 7. Incorporate Pre-trained embedding
+W17+18
+- PLM.ipynb: gives PLMembeddings.csv
+- PLMembeddings.csv
+- PLM.R: embeddings+evaluation (use CUI+Phecode_kdim.Rdata,demo_CUI+Phecode_kdim.Rdata, PLMembeddings.csv,phecode_definitions1.2.csv)
+  
+## 8. KESER Depression Feature Selection
+W14+15
+- CUI_Phecode_train_test.R: gives train and test CUI/Phecode embeddings (use use mimic.db and Phecode_Data_for_generating_embedding.Rdata)
+- Dep_featureselection_CUI/Phecode.R (use CUI_kdim.Rdata, train_CUI_kdim.Rdata, test_CUI_kdim.Rdata, Phecode_kdim.Rdata, train_Phecode_kdim.Rdata,test_Phecode_kdim.Rdata)
+- Dep_featureselection_CUI+Phecode.R (use CUI+Phecode_kdim.Rdata, white_CUI+Phecode_kdim.Rdata, nwhite_CUI+Phecode_kdim.Rdata)
+  
+## 9. Supervised ML models for Depression Prediction
+W20
+(use mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_embedding.Rdata and admissions.csv)
+### 9.1 Logistic Regression
+- Dep_LR.R: on overall and demogroups observations
+- Dep_LR_fullvar.R: on all observations, including demographic indicators
+
+### 9.2 Random Forest
+- Dep_randomforest.R: on overall and demogroups observations
+- Dep_randomforest_fullvar.R: on all observations, including demographic indicators
