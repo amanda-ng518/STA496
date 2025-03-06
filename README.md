@@ -36,10 +36,11 @@ Other datasets:
 - MIMIC_date.R(W11)
 ### 3.2 Phecode/ ICD:
 - MIMIC-III_summary.R (W12b need to change the last line to ICD_Data_for_generating_embedding.Rdata)
+- Phecode_transformation.R
 
 ## 4. Data Preprocessing
-- Phecode_transformation.R: gives Phecode_Data_for_generating_embedding.Rdata
-- MIMIC-III_summary.R: gives ICD_Data_for_generating_embedding.Rdata
+- Phecode_preprocessing.R: gives Phecode_Data_for_generating_embedding.Rdata
+- ICD_preprocessing.R: gives ICD_Data_for_generating_embedding.Rdata
   
 ## 5. Embedding Training (all output embedding matrix)
 Winter break
