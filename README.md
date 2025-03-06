@@ -4,14 +4,14 @@
 
 |Week|Paper|
 |----|-------------------------|
-|[1]()|A tutorial on fairness in machine learning in healthcare|
-|2|Clinical Concept Embeddings Learned from Massive Sources of Multimodal Medical Data|
-|3|Clinical knowledge extraction via sparse embedding regression (KESER) with multi-center large scale electronic health record data|
-|4|Multiview Incomplete Knowledge Graph Integration with application to cross-institutional EHR data harmonization|
-|5| Measuring social bias in knowledge graph embeddings|
-|6|The Lifecycle of "Facts": A Survey of Social Bias in Knowledge Graphs|
-|7a| Learning a Health Knowledge Graph from Electronic Medical Records|
-|7b|Robustly Extracting Medical Knowledge from EHRs: A Case Study of Learning a Health Knowledge Graph|
+|[1](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W1.docx)|A tutorial on fairness in machine learning in healthcare|
+|[2](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W2.docx)|Clinical Concept Embeddings Learned from Massive Sources of Multimodal Medical Data|
+|[3](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W3.docx)|Clinical knowledge extraction via sparse embedding regression (KESER) with multi-center large scale electronic health record data|
+|[4](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W4.docx)|Multiview Incomplete Knowledge Graph Integration with application to cross-institutional EHR data harmonization|
+|[5](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W5.docx)| Measuring social bias in knowledge graph embeddings|
+|[6](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W6.docx)|The Lifecycle of "Facts": A Survey of Social Bias in Knowledge Graphs|
+|[7a](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W7a.docx)| Learning a Health Knowledge Graph from Electronic Medical Records|
+|[7b](https://github.com/amanda-ng518/STA496/blob/67c052f13b8a057e4c0fa5df83fa3c773af68af7/Literature%20review%20notes/W7b.docx)|Robustly Extracting Medical Knowledge from EHRs: A Case Study of Learning a Health Knowledge Graph|
 
 ## 2. Initial Set up
 ### 2.1 Datasets
