@@ -3,8 +3,8 @@
 ## 1. Literature review notes
 
 |Week|Paper|
-|----|--------------------------------------|
-|1|A tutorial on fairness in machine learning in healthcare|
+|----|-------------------------|
+|[1]()|A tutorial on fairness in machine learning in healthcare|
 |2|Clinical Concept Embeddings Learned from Massive Sources of Multimodal Medical Data|
 |3|Clinical knowledge extraction via sparse embedding regression (KESER) with multi-center large scale electronic health record data|
 |4|Multiview Incomplete Knowledge Graph Integration with application to cross-institutional EHR data harmonization|
