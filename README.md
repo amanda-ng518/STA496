@@ -18,17 +18,16 @@ Source: https://www.dropbox.com/scl/fo/m4sdd07arwp4gts8ea5tg/h?rlkey=99fb1m2j2b9
 MIMIC data -> Data cleaning -> ehr data prep
 - mimic.db
 - EHR_demographic.csv
-    
-Phecode/ ICD:
+  
 Source: https://physionet.org/content/mimiciv/3.1/hosp/#files-panel
 
 base -> hosp
 - admission.csv
 - diagnosis_icd.csv
 - d_icd_diagnoses.csv
-- ICD_Phecode.Rdata
 
-PLM: 
+Other datasets:
+- ICD_Phecode.Rdata
 - phecode_definitions1.2.csv
 
 ## 3. Data Summary 
