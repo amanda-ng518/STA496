@@ -1,6 +1,14 @@
 # STA496: Fair Machine Learning with Biased Labels
 
 ## 1. Literature review notes
+- A tutorial on fairness in machine learning in healthcare
+- Clinical Concept Embeddings Learned from Massive Sources of Multimodal Medical Data
+- Clinical knowledge extraction via sparse embedding regression (KESER) with multi-center large scale electronic health record data
+- Multiview Incomplete Knowledge Graph Integration with application to cross-institutional EHR data harmonization
+- Measuring social bias in knowledge graph embeddings
+- The Lifecycle of "Facts": A Survey of Social Bias in Knowledge Graphs
+- Learning a Health Knowledge Graph from Electronic Medical Records
+- Robustly Extracting Medical Knowledge from EHRs: A Case Study of Learning a Health Knowledge Graph
 
 ## 2. Datasets
 CUI:
