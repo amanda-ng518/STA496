@@ -4,10 +4,14 @@
 
 ## Data Preprocessing
 
-## Embedding training
+## Data Summary
 
-## Embedding evaluation
+## Embedding Training
 
-## Depression feature selection
+## Embedding Evaluation
 
-## Supervised ML models for depression prediction
+## Depression Feature Selection
+- Dep_featureselection_CUI/Phecode.R
+- Dep_featureselection_CUI+Phecode.R
+  
+## Supervised ML models for Depression Prediction
