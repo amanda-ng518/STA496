@@ -20,7 +20,7 @@ Please download the following datasets.
 |Source| File path| Data|
 |--|--------------|-------|
 |https://www.dropbox.com/scl/fo/m4sdd07arwp4gts8ea5tg/h?rlkey=99fb1m2j2b9z3ido02w2eu9wg&e=1&dl=0|MIMIC data -> Data cleaning -> ehr data prep| <ul><li>mimic.db</li><li>EHR_demographic.csv</li></ul>|      
-|https://physionet.org/content/mimiciv/3.1/hosp/#files-panel|base -> hosp|<ul><li>admission.csv</li><li>diagnosis_icd.csv</li><li>d_icd_diagnoses.csv</li></ul>|
+|https://physionet.org/content/mimiciv/3.1|base -> hosp|<ul><li>admission.csv</li><li>diagnosis_icd.csv</li><li>d_icd_diagnoses.csv</li></ul>|
 |[Initial Setup Datasets](https://github.com/amanda-ng518/STA496/tree/32139f5b69bcce9de94b93c0c6dad1b66408c2ab/Initial%20Setup%20Datasets)| |<ul><li>ICD_Phecode.Rdata</li><li>phecode_definitions1.2.csv</li></ul>
 
 
