@@ -41,6 +41,8 @@ readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, 
 
 ## 3. Data Summary 
 
+The following R scripts provide information on the EHR datasets such as number of codes each patient has on record, average hospital visits per patient, demographic group distribution in the dataset, etc. This section is not necessary for implementation of the following embedding-related algorithms.
+
 - CUI_summary.R
   - Required datasets: mimic.db
 - ICD_summary.R 
@@ -51,6 +53,9 @@ readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, 
   - Required datasets: admissions.csv
 
 ## 4. Data Preprocessing
+
+The following R scripts processed the medical notes to extract codes (ICD/Phecode) and assigned each code to the corresponding patient's hospital visit discharge date, recorded in month-year format. We denote the code date as the discharge date. The resulting cleaned dataset is organized such that each row represents a single code extracted from the notes, along with the associated patient ID and discharge date. Note that mimic.db which contains CUI codes has already been cleaned in the desired format.
+
 - ICD_preprocessing.R
   - Required datasets: admissions.csv, diagnoses_icd.csv
   - Output: ICD_Data_for_generating_embedding.Rdata
@@ -59,6 +64,8 @@ readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, 
   - Output: Phecode_Data_for_generating_embedding.Rdata
     
 ## 5. Embedding Training 
+
+The following R scripts generate embeddings using SVD-PMI method.
 
 - CUI_embedding.R
   - Required dataset: mimic.db
@@ -79,7 +86,8 @@ readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, 
 ## 6. Embedding Evaluation on known pairs
 Reference: https://cran.r-project.org/web/packages/kgraph/vignettes/kgraph.html
 
-Calculate AUC, Accuracy, Sensitivity, Specificity
+The following R scripts calculate AUC, accuracy, sensitivity and specificity of the result embeddings using known relationship between codes.
+
 ### 6.1 Overall 
 
 - CUI_evalutation.R
@@ -96,21 +104,25 @@ Calculate AUC, Accuracy, Sensitivity, Specificity
 - CUI+Phecode_demographics_evaluation.R (use demo_CUI+Phecode_kdim.Rdata from embedding training)
   - Required dataset: ICD_Phecode.Rdata, demogroup_CUI+Phecode_kdim.Rdata
     
-### 6.3 Bootstrapping
+### 6.3 Bootstrapping 
+
+The following R scrips create 9 bootstrap samples by resampling observations from the original dataset, and hence generate 9 sets of bootstrap embeddings. These bootstrap embeddings are then used to estimate the standard error of the embedding evaluation metrics.
 
 - Bootstrap_CUI+Phecode_embedding_demographics.R: 
   - Required dataset: mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_embedding.Rdata, admissions.csv
   - Output: demogroup_CUI+Phecode_kdim_j.Rdata (9 sets per group)
-- bootstrapping_demo_se.R: evaluate bootstrapped metric means and se (use bootstrapped embeddings and original embeddings)
-  - Required dataset: demogroup_CUI+Phecode_kdim_j.Rdata
+- bootstrapping_demo_se.R: 
+  - Required dataset: demogroup_CUI+Phecode_kdim.Rdata (i.e. original embedding), demogroup_CUI+Phecode_kdim_j.Rdata (i.e. bootstrap embeddings)
     
 ## 7. Incorporate Pre-trained embedding
 Reference: https://celehs.github.io/PEHRT/m2.html
 
+To enhance the predictive performance of the embeddings, we explored the use of pre-trained language models (PLMs) to generate embeddings based on the descriptions or names of Phecodes and CUIs. The follwing R scripts create an additional set of embeddings by leveraging the description or names information from the codes. These embeddings were then concatenated with the original SCD-PMI-based embeddings. The PLM-concatenated embeddings are evaluated on AUC, accuracy, sensitivity and specificity with known pairs.
+
 - PLM.ipynb
   - Required dataset: phecode_definitions1.2.csv
-  - Output: PLMembeddings.csv
-- PLM.R: generate embeddings + evaluation 
+  - Output: PLMembeddings.csv 
+- PLM.R: 
   - Required dataset: CUI+Phecode_kdim.Rdata,demo_CUI+Phecode_kdim.Rdata, PLMembeddings.csv,phecode_definitions1.2.csv
 
 ## 8. KESER Depression Feature Selection
@@ -125,6 +137,9 @@ Reference: https://github.com/celehs/KESER
   - Required dataset: CUI+Phecode_kdim.Rdata, demogroup_CUI+Phecode_kdim.Rdata, oppositedemogroup_CUI+Phecode_kdim.Rdata
     
 ## 9. Supervised ML models for Depression Prediction
+
+The following R scrips use logistic regression and random forest to predict presence of depression based on the 20 KESER selected features from previous step. Using the training-testing approach, models are built on all observations as well as demographic subgroups. Addition models incorporating demographic variables are fitted to all observations (i.e. Dep_method_fullvar.R). Resulting models are evaluated in terms of AUC, accuracy, sensitivity, specificty on testing data.
+
 Required dataset: mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_embedding.Rdata, admissions.csv
 
 ### 9.1 Logistic Regression
@@ -134,8 +149,3 @@ Required dataset: mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_emb
 ### 9.2 Random Forest
 - Dep_randomforest.R
 - Dep_randomforest_fullvar.R
-
-Note:
-
-- Dep_method.R = predict presence of depression based on KESER selected features on overall and demogroups observations
-- Dep_method_fullvar.R = predict presence of depression based on KESER selected feature and demographic indicators on all observations
