@@ -3,7 +3,7 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 #-----------------------Read data----------------------------#
-note <- read_csv("/Users/amanda/Documents/STA496/admissions.csv")
+note <- read_csv("admissions.csv")
 
 data = note%>%
   group_by(subject_id)%>%
