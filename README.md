@@ -37,7 +37,7 @@ library(KESER)
 ```
 ## 3. Data Summary 
 
-The following R scripts provide information on the EHR datasets such as number of codes each patient has on record, average hospital visits per patient, demographic group distribution in the dataset, etc. This section is not necessary for implementation of the following embedding-related algorithms.
+The following R scripts provide information on the EHR datasets such as number of codes each patient has on record, average hospital visits per patient, demographic group distribution in the dataset, etc. This section is not necessary for implementation of latter sections.
 
 - CUI_summary.R
   - Required datasets: mimic.db
