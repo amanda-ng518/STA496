@@ -17,22 +17,16 @@
 ### 2.1 Datasets
 Please download the following datasets.
 
-Source: https://www.dropbox.com/scl/fo/m4sdd07arwp4gts8ea5tg/h?rlkey=99fb1m2j2b9z3ido02w2eu9wg&e=1&dl=0
 
-File path: MIMIC data -> Data cleaning -> ehr data prep
-- mimic.db
-- EHR_demographic.csv
-  
-Source: https://physionet.org/content/mimiciv/3.1/hosp/#files-panel
-
-File path: base -> hosp
-- admission.csv
-- diagnosis_icd.csv
-- d_icd_diagnoses.csv
-
-Some additional datasets are available under the [Data preprocessing directory](https://github.com/amanda-ng518/STA496/tree/af8c8af2c25aec4b50261bd31f896f85daf2e15b/Data%20preprocessing):
-- ICD_Phecode.Rdata
-- phecode_definitions1.2.csv
+|Source| File path| data|
+|--------|-----|--------|
+|https://www.dropbox.com/scl/fo/m4sdd07arwp4gts8ea5tg/h?rlkey=99fb1m2j2b9z3ido02w2eu9wg&e=1&dl=0|MIMIC data -> Data cleaning -> ehr data prep| mimic.db|
+| | |EHR_demographic.csv|        
+|https://physionet.org/content/mimiciv/3.1/hosp/#files-panel|base -> hosp|- admission.csv|
+| | |diagnosis_icd.csv|
+| | |d_icd_diagnoses.csv|
+|[Data preprocessing directory](https://github.com/amanda-ng518/STA496/tree/af8c8af2c25aec4b50261bd31f896f85daf2e15b/Data%20preprocessing)| |ICD_Phecode.Rdata|
+|||phecode_definitions1.2.csv|
 
 ### 2.2 R library
 The following R packages are necessary to run the R scripts.
