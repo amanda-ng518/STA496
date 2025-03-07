@@ -25,10 +25,16 @@ Please download the following datasets.
 
 
 ### 2.2 R library
-The following R packages are necessary to run the R scripts.
+The following R packages are required to run the R scripts.
 
 readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, KESER, wordcloud, tidyverse, igraph, ggraph, pROC, randomForest
 
+For KESER, please first download the remote package and then install `KESER` from Github using the following code:
+```
+# install.packages("remotes")
+remotes::install_github("celehs/KESER")
+library(KESER)
+```
 ## 3. Data Summary 
 
 The following R scripts provide information on the EHR datasets such as number of codes each patient has on record, average hospital visits per patient, demographic group distribution in the dataset, etc. This section is not necessary for implementation of the following embedding-related algorithms.
