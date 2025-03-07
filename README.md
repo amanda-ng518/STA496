@@ -27,9 +27,9 @@ Please download the following datasets.
 ### 2.2 R library
 The following R packages are required to run the R scripts.
 
-readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, KESER, wordcloud, tidyverse, igraph, ggraph, pROC, randomForest
+`readr`, `dplyr`, `tidyr`, `ggplot2`, `PheWAS`, `icd`, `kgraph`, `RSQLite`, `stringr`, `nlpembeds`, `KESER`, `wordcloud`, `tidyverse`, `igraph`, `ggraph`, `pROC`, `randomForest`
 
-For KESER, please first download the remote package and then install `KESER` from Github using the following code:
+For `KESER`, please first download the `remote` package and then install `KESER` from Github using the following code:
 ```
 # install.packages("remotes")
 remotes::install_github("celehs/KESER")
@@ -60,6 +60,7 @@ The following R scripts processed the medical notes to extract codes (ICD/Phecod
   - Output: Phecode_Data_for_generating_embedding.Rdata
     
 ## 5. Embedding Training 
+Reference: https://gitlab.com/thomaschln/nlpembeds
 
 The following R scripts generate embeddings using SVD-PMI method.
 
