@@ -18,11 +18,13 @@
 Please download the following datasets.
 
 Source: https://www.dropbox.com/scl/fo/m4sdd07arwp4gts8ea5tg/h?rlkey=99fb1m2j2b9z3ido02w2eu9wg&e=1&dl=0
+
 File path: MIMIC data -> Data cleaning -> ehr data prep
 - mimic.db
 - EHR_demographic.csv
   
 Source: https://physionet.org/content/mimiciv/3.1/hosp/#files-panel
+
 File path: base -> hosp
 - admission.csv
 - diagnosis_icd.csv
@@ -56,7 +58,7 @@ readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, 
   - Required datasets: admissions.csv, diagnoses_icd.csv, d_icd_diagnoses.csv
   - Output: Phecode_Data_for_generating_embedding.Rdata
     
-## 5. Embedding Training (all output embedding matrix)
+## 5. Embedding Training 
 
 - CUI_embedding.R
   - Required dataset: mimic.db
@@ -76,6 +78,7 @@ readr, dplyr, tidyr, ggplot2, PheWAS, icd, kgraph, RSQLite, stringr, nlpembeds, 
 
 ## 6. Embedding Evaluation on known pairs
 Reference: https://cran.r-project.org/web/packages/kgraph/vignettes/kgraph.html
+
 Calculate AUC, Accuracy, Sensitivity, Specificity
 ### 6.1 Overall 
 
@@ -125,9 +128,14 @@ Reference: https://github.com/celehs/KESER
 Required dataset: mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_embedding.Rdata, admissions.csv
 
 ### 9.1 Logistic Regression
-- Dep_LR.R: on overall and demogroups observations
-- Dep_LR_fullvar.R: on all observations, including demographic indicators
+- Dep_LR.R
+- Dep_LR_fullvar.R
 
 ### 9.2 Random Forest
-- Dep_randomforest.R: on overall and demogroups observations
-- Dep_randomforest_fullvar.R: on all observations, including demographic indicators
+- Dep_randomforest.R
+- Dep_randomforest_fullvar.R
+
+Note:
+
+- Dep_method.R = predict presence of depression based on KESER selected features on overall and demogroups observations
+- Dep_method_fullvar.R = predict presence of depression based on KESER selected feature and demographic indicators on all observations
