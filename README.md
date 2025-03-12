@@ -135,14 +135,14 @@ Reference: https://github.com/celehs/KESER
     
 ## 9. Supervised ML models for Depression Prediction
 
-The following R scrips use logistic regression and random forest to predict presence of depression based on the 20 KESER selected features from previous step. Using the training-testing approach, models are built on all observations as well as demographic subgroups. Addition models incorporating demographic variables are fitted to all observations (i.e. Dep_method_fullvar.R). Resulting models are evaluated in terms of AUC, accuracy, sensitivity, specificty on testing data.
+The following R scrips use logistic regression and random forest to predict presence of depression based on the 20 KESER selected features from previous step. Using the 70:30 training-testing approach, models are fitted using the full training dataset. They were then evaluated on demographic subgroups in the testing dataset, in terms of AUC, accuracy, sensitivity, specificty. Standard errors of metrics are computed by bootstrapping the testing datasets. Difference (and their corresponding standard errors) in metrics between complementary demographic groups (i.e. white vs non-white and private vs non-private insurance) are also computed. Addition models incorporating demographic variables are also fitted (i.e. Dep_method_KESER_demo.R) and evaluated.
 
 Required dataset: mimic.db, EHR_demographic.csv, Phecode_Data_for_generating_embedding.Rdata, admissions.csv
 
 ### 9.1 Logistic Regression
-- Dep_LR.R
-- Dep_LR_fullvar.R
+- Dep_LR_KESER.R
+- Dep_LR_KESER_demo.R
 
 ### 9.2 Random Forest
-- Dep_randomforest.R
-- Dep_randomforest_fullvar.R
+- Dep_randomforest_KESER.R
+- Dep_randomforest_KESER_demo.R
